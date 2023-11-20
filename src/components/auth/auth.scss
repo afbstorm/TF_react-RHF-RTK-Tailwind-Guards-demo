@@ -1,0 +1,14 @@
+div {
+  @apply flex flex-col justify-center items-center bg-blue-500 text-white border-r-2 w-80 h-80 relative top-5;
+  margin: 0 auto;
+
+  .form {
+    @apply flex flex-col gap-10 font-bold;
+
+    .form__btn__submit {
+      @apply w-32 h-20;
+    }
+  }
+}
+
+

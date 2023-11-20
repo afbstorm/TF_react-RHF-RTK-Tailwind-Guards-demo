@@ -1,0 +1,46 @@
+Installation des dépendances :
+
+Tailwind :
+npm i -D tailwindcss postcss autoprefixer sass
+npx tailwind init -p
+
+Tailwind.config.js ajouter :
+content: [
+    "./index.html",
+    "./src/**/*.{js,jsx}",
+  ],
+index.css :
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*.scss / css :
+
+.classname {
+    @apply ...
+}
+
+-------------------
+
+Redux :
+npm i @reduxjs/toolkit react-redux
+
+main.jsx :
+<Provider store={store}>
+</Provider>
+
+store.js :
+export const store = configureStore({
+    reducer: {
+        reducerName: reducerNameReducer
+    }
+})
+
+React-hook-form
+npm i react-hook-form
+
+Autres librairies de composants :
+
+Headlessui
+Antui
+Mantine
