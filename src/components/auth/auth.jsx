@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Controller, useForm } from "react-hook-form";
 import { setLogin } from "../../store/slices/auth.slice.js";
 import { useEffect, useState } from "react";
-import {Button, CircularProgress} from "@mui/material";
+import {Button, CircularProgress, IconButton} from "@mui/material";
 import Form from "../form/form.jsx";
 import { login } from "../../services/auth.service.js";
 import { useNavigate } from "react-router-dom";
@@ -22,6 +22,7 @@ const Auth = () => {
 
     // Fonction appelée lors de la soumission du formulaire
     const onSubmit = (datas) => {
+        console.log(datas)
         // Dispatch de l'action pour mettre à jour les informations de connexion dans Redux
         dispatch(setLogin(datas));
         // Activation de l'état de chargement
@@ -37,6 +38,7 @@ const Auth = () => {
         if (res) {
             // Désactivation de l'état de chargement et redirection vers le tableau de bord
             setIsLoading(false);
+            localStorage.setItem('authToken', res.data.token)
             navigate('dashboard');
         }
     };
@@ -74,7 +76,7 @@ const Auth = () => {
                                 type='password'
                                 className='form__input__password'/>
                         )} />
-                    <Button variant="contained" color="success" className='form__btn__submit'>Click me</Button>
+                    <IconButton type='submit'>Envoyer</IconButton>
                 </form>}
         </div>
     )

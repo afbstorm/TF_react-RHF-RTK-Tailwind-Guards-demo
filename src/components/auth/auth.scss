@@ -3,7 +3,7 @@ div {
   margin: 0 auto;
 
   .form {
-    @apply flex flex-col gap-10 font-bold;
+    @apply flex flex-col gap-10 font-bold text-black;
 
     .form__btn__submit {
       @apply w-32 h-20;
